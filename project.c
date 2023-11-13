@@ -26,6 +26,9 @@ int main() {
             scanf("%d", &choice);
 
             switch (choice) {
+                case 0:
+                    printf("Thank you for using the ATM. Goodbye!\n");
+                    break;
                 case 1:
                     checkBalance(balance);
                     break;
@@ -35,16 +38,13 @@ int main() {
                 case 3:
                     balance = withdraw(balance);
                     break;
-                case 4:
+                case 10:
                     pin = changePIN(pin);
-                    break;
-                case 5:
-                    printf("Thank you for using the ATM. Goodbye!\n");
                     break;
                 default:
                     printf("Invalid choice. Please try again.\n");
             }
-        } while (choice != 5);
+        } while (choice != 0);
     } else {
         printf("Invalid PIN. Exiting...\n");
     }
@@ -54,11 +54,11 @@ int main() {
 
 void displayMenu() {
     printf("\nATM Menu:\n");
+    printf("0. Exit\n");
     printf("1. Check Balance\n");
     printf("2. Deposit\n");
     printf("3. Withdraw\n");
-    printf("4. Change PIN\n");
-    printf("5. Exit\n");
+    printf("10. Change PIN\n");
 }
 
 void checkBalance(float balance) {
