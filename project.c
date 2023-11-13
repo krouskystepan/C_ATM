@@ -1,6 +1,5 @@
 #include <stdio.h>
 
-// Function prototypes
 void displayMenu();
 void checkBalance(float balance);
 float deposit(float balance);
@@ -8,7 +7,6 @@ float withdraw(float balance);
 int changePIN(int oldPIN);
 
 int main() {
-    // Hardcoded initial balance and PIN
     float balance = 1000.0;
     int pin = 1234;
 
@@ -22,14 +20,11 @@ int main() {
         int choice;
 
         do {
-            // Display menu
             displayMenu();
 
-            // Prompt for user choice
             printf("Enter your choice: ");
             scanf("%d", &choice);
 
-            // Perform the selected operation
             switch (choice) {
                 case 1:
                     checkBalance(balance);
